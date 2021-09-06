@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "15.x"
+  },
   "scripts": {
-    "start": "nodemon -e ts,json,ejs src/server.ts"
+    "start": "node dist/server.js",
+    "postinstall": "tsc && copyfiles -u 1 src/**/*.ejs dist/",
+    "start-dev": "nodemon -e ts,json,ejs src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -27,6 +32,7 @@
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.7.10",
+    "copyfiles": "^2.4.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12"
   }
