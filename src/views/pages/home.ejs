@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<% if(banner) { %>
+    <section class="banner" style="background-image: url('/images/<%= banner.background %>')"><%= banner.title %> </section>
+    <h2><%= banner.title %>  disponíveis para adoção</h2>
+<% } %>  
+
+<div class="container list">    
+   
+    <% if(list.length > 0) { %>
+
+        <% list.forEach(element => { %> 
+   
+            <div class="item">
+                <img src="/images/<%= element.image %> " class="item--image" />
+                <div class="item--name"><%= element.name %></div>
+                <div class="item--color">Cor: <%= element.color %> </div>
+                <div class="item--genre">Gênero: <%= element.sex %> </div>
+            </div>
+        
+            <% }); %> 
+
+    <% } else { %>  
+        <div class="container no-list">
+            <h2>Não foi encontrado</h2>
+        </div>
+    <% } %> 
+
+</div>
+<%- include('../partials/footer') %>

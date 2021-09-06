@@ -10,7 +10,7 @@ routes.get('/dogs', PageController.Dogs);
 routes.get('/cats', PageController.Cats);
 routes.get('/fishes', PageController.Fishes);
 
-routes.get('/search/:slug', SearchController.Search);
+routes.get('/search', SearchController.Search);
 
 
 export default routes;

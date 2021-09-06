@@ -13,7 +13,7 @@ const server = express();
 server.set('view engine', 'ejs');
 server.set('views', path.join(__dirname, 'views'));
 
-server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({ extended: true}));
 server.use(express.json());
 
